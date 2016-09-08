@@ -50,11 +50,11 @@ void gameMainEventScreen(int width, int height, double pixelRatio){
 	global.window.w = width;
 	global.window.h = height;
 	glViewport(0, 0, width * pixelRatio, height * pixelRatio);
-	if(false){
+	if(true){
 		// スクリーンサイズ固定 
 		global.screen.w = 320;
 		global.screen.h = 480;
-	}else if(true){
+	}else if(false){
 		// スクリーン横幅固定
 		global.screen.w = 320;
 		global.screen.h = global.screen.w * global.window.h / global.window.w;

@@ -1,5 +1,7 @@
 DIR = $(shell pwd)
-IDENTIFIER = com.example.fuhaha
+IDENTIFIER = com.totetero.hopping
+DATS = createDataPuppet createDataMeister createDataGacha createDataField createDataEnemy createDataBackground
+DATBINS = $(addprefix src_data/bin/, $(addsuffix .out, $(DATS)))
 
 default: web
 
@@ -15,6 +17,7 @@ copy:
 	rsync -av --delete contents/ src_platform/android/assets/ --exclude='*.ogg'
 	rsync -av --delete contents/ src_platform/ios/assets/ --exclude='*.ogg'
 	rsync -av --delete contents/ src_platform/web/bin/ --exclude='game.js' --exclude='game.js.mem' --exclude='game.html' --exclude='frame.html'
+	rsync -av --delete src_platform/web/bin/ src_server/statics/play/
 
 # --------------------------------
 
@@ -26,7 +29,7 @@ web-node: copy web-debug
 web-debug:
 	$(MAKE) -C src_platform/web debug
 
-web-release: copy
+web-release: dat-trial copy
 	$(MAKE) -C src_platform/web release
 
 web-clean:
@@ -63,6 +66,37 @@ ios-debug:
 
 ios-clean:
 	xcodebuild clean -project src_platform/ios/fuhaha.xcodeproj -scheme fuhaha -sdk iphonesimulator -configuration Debug
+
+# --------------------------------
+
+secret: src_client/core/plugin/pluginSecretCoded.h
+
+src_client/core/plugin/pluginSecretCoded.h: src_data/secret/createSecret.c src_data/secret/createSecret.h
+	clang -o src_data/bin/createSecret.out src_data/secret/createSecret.c
+	./src_data/bin/createSecret.out src_client/core/plugin/pluginSecretCoded.h
+
+# --------------------------------
+
+dat: $(DATBINS)
+	@for out in $(DATBINS) ; do ./$$out ; done
+
+dat-trial: DATCFLAGS = -D__TRIAL__
+dat-trial: dat-clean dat
+
+dat-release: DATCFLAGS = 
+dat-release: dat-clean dat
+
+src_data/bin/%.out: src_data/create/%.c src_data/core/data.c src_data/core/data.h
+	clang $(DATCFLAGS) -o $@ $< src_data/core/data.c
+
+dat-clean:
+	-rm $(DATBINS)
+	-rm contents/data/*/*
+
+# --------------------------------
+
+img:
+	cd src_data/image ; sh create.sh
 
 # --------------------------------
 

@@ -6,6 +6,7 @@ CORESRCDIR = ../../src_client/core
 OUTDIR = obj
 JSSRCS = $(shell find $(PLATSRCDIR) -name "*.js")
 CSRCS = $(PLATSRCDIR)/main.c $(shell find $(CORESRCDIR) -name "*.c")
+CSRCS += $(shell find ../../src_data/core -name "*.c")
 OBJS = $(addprefix $(OUTDIR)/,$(notdir $(CSRCS:.c=.o)))
 TARGET = $(OUTDIR)/game.js
 DEPEND = $(OUTDIR)/MakeDepends.mk
@@ -32,7 +33,7 @@ default: debug
 
 debug: build
 
-release: EMCC += -O3
+release: EMCC += -O3 -D__TRIAL__
 release: clean build
 
 build: $(TARGET)

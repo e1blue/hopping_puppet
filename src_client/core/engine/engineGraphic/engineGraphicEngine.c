@@ -77,7 +77,7 @@ void engineGraphicEngineInit(void){
 	engineGraphicEngineMemoryResetIBO();
 	engineGraphicEngineMemoryResetTex();
 
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClearColor(0.05f, 0.35f, 0.10f, 1.00f);
 	glClearDepthf(1.0f);
 	glClearStencil(0);
 	glCullFace(GL_BACK);

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-IDENTIFIER=com.example.fuhaha
-VERSIONCODE=1
-VERSIONNAME=0.0.1
+IDENTIFIER=com.totetero.hopping
+VERSIONCODE=7
+VERSIONNAME=1.3.2
 
 # --------------------------------
 

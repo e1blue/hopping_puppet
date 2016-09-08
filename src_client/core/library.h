@@ -18,6 +18,7 @@ typedef unsigned char byte;
 
 //// ゲーム本体における共通部分インクルード順番の例
 //#include "plugin/pluginUtil.h"
+//#include "plugin/pluginSecret.h"
 //#include "plugin/pluginData.h"
 //#include "plugin/pluginTexture.h"
 //#include "plugin/pluginPreference.h"
