@@ -1,9 +1,12 @@
 ホッピンパペット
 ======================
 
-## ホッピンパペット
+## ホッピンパペットって美味しいの？
 
 社内企画コンテストで全く相手にされなかった企画を自分で作っちゃいました。
+
+[ホッピンパペット](http://totetero.com/project/hoppingpuppet/index.html)
+[フハハエンジン](https://github.com/totetero/fuhaha_engine)
 
 ## ファイル構造
 
