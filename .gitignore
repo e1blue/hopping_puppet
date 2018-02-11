@@ -6,28 +6,17 @@
 .DS_Store
 *.swp
 
-src_data/image/header/*.h
+src_client/platform_web/obj/game.js
+src_client/platform_web/obj/game.js.mem
+src_client/platform_web/obj/MakeDepends.mk
+src_client/platform_web/obj/*.o
+src_client/platform_web/bin
 
-src_platform/web/obj/game.js
-src_platform/web/obj/game.js.mem
-src_platform/web/obj/MakeDepends.mk
-src_platform/web/obj/*.o
-src_platform/web/bin
+src_client/platform_android/.gradle
+src_client/platform_android/build
+src_client/platform_android/assets
 
-src_platform/android/.gradle
-src_platform/android/build
-src_platform/android/assets
-src_platform/android/*.keystore
-
-src_platform/ios/assets
-
-src_server/statics/play
-
-src_data/bin/*.out
-contents/data/*/*.dat
-contents/img/*/*.png
-contents/img/system.png
-contents/img/manual.png
+src_client/platform_ios/assets
 
 # ----------------------------------------------------------------
 # ----------------------------------------------------------------
