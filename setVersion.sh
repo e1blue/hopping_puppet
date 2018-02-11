@@ -1,8 +1,8 @@
 #!/bin/bash
 
 IDENTIFIER=com.totetero.hopping
-VERSIONCODE=7
-VERSIONNAME=1.3.2
+VERSIONCODE=8
+VERSIONNAME=1.4.0
 
 # --------------------------------
 

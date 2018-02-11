@@ -22,6 +22,7 @@
 		<div>※無料であそべるよ。課金要素なしだよ。</div>
 	</div>
 
+<!--
 	<div style="background-color:red;text-align:center;">アプリで遊べない人はWeb体験版を遊ぼう!!</div>
 
 	<div style="text-align:center;padding:10px 0px;">
@@ -29,8 +30,37 @@
 		<div>※ブラウザがwebGLに対応している必要があります。最新のならたぶんいける。</div>
 		<div>※アプリへのデータの引き継ぎはできません。</div>
 	</div>
+-->
 
-	<div style="background-color:red;text-align:center;">2014 <a href="http://totetero.com">totetero.com</a></div>
+	<div style="background-color:red;text-align:center;">アプリで遊べない人はWeb版を遊ぼう!!</div>
+
+	<div style="text-align:center;padding:10px 0px;">
+		<div>体験版は廃止してweb版も全機能解放したよ。</div>
+		<div><a href="./play.html"><img src="./img/banner_web.png" style="width:120px; height:45px;"></a></div>
+		<table align="center">
+			<tr><td><b>compile option</b></td><td><b>.js size</b></td><td><b>.wasm size</b></td><td><b>game link</b></td></tr>
+			<tr><td>emcc</td><td align="right">2045027</td><td align="right"></td><td align="center"><a href="./play11/game.html">play</a></td></tr>
+			<tr><td>emcc -s WASM=1</td><td align="right">246537</td><td align="right">451004</td><td align="center"><a href="./play12/game.html">play</a></td></tr>
+			<tr><td>emcc -O3</td><td align="right">473131</td><td align="right"></td><td align="center"><a href="./play21/game.html">play</a></td></tr>
+			<tr><td>emcc -O3 -s WASM=1</td><td align="right">128515</td><td align="right">247115</td><td align="center"><a href="./play22/game.html">play</a></td></tr>
+			<tr><td>emcc -Os</td><td align="right">394081</td><td align="right"></td><td align="center"><a href="./play31/game.html">play</a></td></tr>
+			<tr><td>emcc -Os -s WASM=1</td><td align="right">128515</td><td align="right">196081</td><td align="center"><a href="./play32/game.html">play</a></td></tr>
+			<tr><td>emcc -Oz</td><td align="right">391771</td><td align="right"></td><td align="center"><a href="./play41/game.html">play</a></td></tr>
+			<tr><td>emcc -Oz -s WASM=1</td><td align="right">128515</td><td align="right">194180</td><td align="center"><a href="./play42/game.html">play</a></td></tr>
+		</table>
+		<div>※ゲームが上手く動かない方はデータをリセットしてください。<button type="button" id="buttonReset">データをリセット</button></div>
+		<div>※ブラウザがwebGLに対応している必要があります。最新のならたぶんいける。</div>
+		<script type="text/javascript">
+			document.getElementById("buttonReset").addEventListener("click", function(){
+				if(window.confirm("Do you want to reset the data?")){
+					window.localStorage.clear();
+					window.alert("The data was reset.");
+				}
+			});
+		</script>
+	</div>
+
+	<div style="background-color:red;text-align:center;">2014-2018 <a href="http://totetero.com">totetero.com</a></div>
 	
 	<script type="text/javascript">
 // ----------------------------------------------------------------

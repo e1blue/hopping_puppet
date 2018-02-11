@@ -37,9 +37,9 @@ gradle.projectsEvaluated{
 
 apply plugin: "com.android.model.application"
 
-project.ext.fuhahaApplicationId = "com.example.fuhaha"
-project.ext.fuhahaVersionCode = 1
-project.ext.fuhahaVersionName = "0.0.1"
+project.ext.fuhahaApplicationId = "com.totetero.hopping"
+project.ext.fuhahaVersionCode = 8
+project.ext.fuhahaVersionName = "1.4.0"
 
 model{
 	android{
@@ -78,6 +78,7 @@ model{
 				srcDir("../fuhahaEngine/core")
 				srcDir("../main/android")
 				srcDir("../main/core")
+				srcDir("../../src_data/core")
 			}
 			manifest.source{
 				srcDir("src")
